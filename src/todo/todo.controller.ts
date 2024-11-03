@@ -1,11 +1,18 @@
 import { AppService } from './../app.service';
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, Query, UsePipes } from '@nestjs/common';
 import { CreateTodo, UpdateDto } from './todo.dto';
+import { TodoPipe } from './todo.pipe';
 
 @Controller()
 export class TodoController {
     constructor(private appservice:AppService){}
     private todos = []
+
+    @Get("user/:id/:slug")
+    // @UsePipes(TodoPipe)
+    getUserById(@Param() data, @Query('search') sea:string){
+        return {data:JSON.stringify(data), sea}
+    }
 
 // post method
     @Post("/create")

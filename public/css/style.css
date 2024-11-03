@@ -1,0 +1,10 @@
+*{
+    background-color: rgb(16, 39, 39);
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    box-shadow: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    font-style: oblique;
+}
